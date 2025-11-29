@@ -1,0 +1,15 @@
+name: Scheduled Tests Job
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Iniciando compile do projeto
+        run: echo "🛠️ Compilando o projeto Maven"
+      - name: Compilar projeto
+        run: mvn clean compile
